@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="testing API">
+    <test name="github API" >
+        <classes>
+            <class name="epam.com.test.api.tests.GeneralApiTest" >
+                <methods>
+                    <include name="responseBodyTest"/>
+                    <include name="generalRequestTest"/>
+                    <include name="generalResponceTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
