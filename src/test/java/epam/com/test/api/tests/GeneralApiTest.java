@@ -1,6 +1,5 @@
 package epam.com.test.api.tests;
 
-
 import epam.com.test.api.support.model.GeneralInfo;
 import epam.com.test.api.support.utils.constants.ProjectConstants;
 import okhttp3.Request;
@@ -16,10 +15,8 @@ public class GeneralApiTest extends BaseTest {
 	@Test
 	public void responseBodyTest() {
 		GeneralInfo generalInfo = serviceHelper.getCharactersListObject();
-
 		Assert.assertNotNull(generalInfo, "Object was not received from request. ");
 		Assert.assertTrue(generalInfo.getData().getResults().size() != 0, "Results list should be more then zero.");
-
 	}
 
 	@Test

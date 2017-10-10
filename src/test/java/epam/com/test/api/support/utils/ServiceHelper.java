@@ -42,7 +42,7 @@ public class ServiceHelper {
 	}
 
 	public GeneralInfo getCharactersListObject() {
-		String body = null;
+		String body;
 		try {
 			body = new String(getCharactersListCall().execute().body().bytes());
 			return JsonHelper.fromJson(body, GeneralInfo.class);

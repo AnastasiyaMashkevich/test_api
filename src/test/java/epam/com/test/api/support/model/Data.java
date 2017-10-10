@@ -1,13 +1,13 @@
 package epam.com.test.api.support.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
-@JsonDeserialize(as = Data.class)
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
@@ -22,8 +22,6 @@ public class Data {
 	private Integer count;
 	@JsonProperty("results")
 	private List<Result> results = null;
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 	@JsonProperty("offset")
 	public Integer getOffset() {

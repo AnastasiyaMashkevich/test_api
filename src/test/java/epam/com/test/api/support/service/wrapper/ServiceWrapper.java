@@ -18,7 +18,6 @@ public class ServiceWrapper {
             protected Retrofit initialValue() {
                 OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(30, TimeUnit.SECONDS).build();
                 return new Retrofit.Builder().client(client).baseUrl(baseUrl)
-//                        .addCallAdapterFactory(SynchronousCallAdapterFactory.create())
                         .addConverterFactory(JacksonConverterFactory.create()).build();
             }
         };

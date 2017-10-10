@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="testing API">
+    <listeners>
+        <listener class-name="epam.com.test.api.runner.TestListners" />
+    </listeners>
     <test name="github API" >
         <classes>
             <class name="epam.com.test.api.tests.GeneralApiTest" >

@@ -1,7 +1,5 @@
 package epam.com.test.api.tests;
 
-
-
 import epam.com.test.api.support.utils.ServiceHelper;
 import org.testng.annotations.BeforeTest;
 
