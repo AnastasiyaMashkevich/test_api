@@ -52,7 +52,7 @@ Temporary Items
 
 .idea
 
+/target/
 
-pom.xml
 src/main/
 test_api.iml
