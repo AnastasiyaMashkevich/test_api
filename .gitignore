@@ -53,6 +53,6 @@ Temporary Items
 .idea
 
 /target/
-
+epam.iml
 src/main/
 test_api.iml
