@@ -2,6 +2,8 @@
 <suite name="testing API">
     <listeners>
         <listener class-name="epam.com.test.api.runner.TestListners" />
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
     <test name="github API" >
         <classes>
