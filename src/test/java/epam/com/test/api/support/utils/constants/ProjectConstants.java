@@ -21,5 +21,7 @@ public class ProjectConstants {
 
 	public static final String GET_METHOD = "GET";
 
+	public static final int THREADS_NUMBER = 10;
+
 
 }

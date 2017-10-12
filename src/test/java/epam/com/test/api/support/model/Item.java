@@ -11,14 +11,17 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
+
 	@JsonProperty("resourceURI")
 	private String resourceURI;
 	@JsonProperty("name")
 	private String name;
 	@JsonProperty("type")
 	private String type;
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+	public Item() {
+
+	}
 
 	@JsonProperty("resourceURI")
 	public String getResourceURI() {
@@ -48,4 +51,27 @@ public class Item {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	@Override public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+
+		Item item = (Item) o;
+
+		if (resourceURI != null ? !resourceURI.equals(item.resourceURI) : item.resourceURI != null)
+			return false;
+		if (name != null ? !name.equals(item.name) : item.name != null)
+			return false;
+		return type != null ? type.equals(item.type) : item.type == null;
+	}
+
+	@Override public int hashCode() {
+		int result = resourceURI != null ? resourceURI.hashCode() : 0;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (type != null ? type.hashCode() : 0);
+		return result;
+	}
+
 }

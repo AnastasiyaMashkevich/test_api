@@ -27,6 +27,10 @@ public class Result {
 	@JsonProperty("events")
 	private Event events;
 
+	public Result() {
+
+	}
+
 	@JsonProperty("id")
 	public Integer getId() {
 		return id;
@@ -118,4 +122,43 @@ public class Result {
 	}
 
 
+	@Override public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+
+		Result result = (Result) o;
+
+		if (id != null ? !id.equals(result.id) : result.id != null)
+			return false;
+		if (name != null ? !name.equals(result.name) : result.name != null)
+			return false;
+		if (description != null ? !description.equals(result.description) : result.description != null)
+			return false;
+		if (modified != null ? !modified.equals(result.modified) : result.modified != null)
+			return false;
+		if (resourceURI != null ? !resourceURI.equals(result.resourceURI) : result.resourceURI != null)
+			return false;
+		if (event != null ? !event.equals(result.event) : result.event != null)
+			return false;
+		if (series != null ? !series.equals(result.series) : result.series != null)
+			return false;
+		if (stories != null ? !stories.equals(result.stories) : result.stories != null)
+			return false;
+		return events != null ? events.equals(result.events) : result.events == null;
+	}
+
+	@Override public int hashCode() {
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (description != null ? description.hashCode() : 0);
+		result = 31 * result + (modified != null ? modified.hashCode() : 0);
+		result = 31 * result + (resourceURI != null ? resourceURI.hashCode() : 0);
+		result = 31 * result + (event != null ? event.hashCode() : 0);
+		result = 31 * result + (series != null ? series.hashCode() : 0);
+		result = 31 * result + (stories != null ? stories.hashCode() : 0);
+		result = 31 * result + (events != null ? events.hashCode() : 0);
+		return result;
+	}
 }

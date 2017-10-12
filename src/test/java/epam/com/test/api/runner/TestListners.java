@@ -1,19 +1,19 @@
 package epam.com.test.api.runner;
 
 import org.apache.log4j.BasicConfigurator;
-import org.testng.*;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.ITestContext;
 
 public class TestListners implements ITestListener {
 
 	private static final Logger log = LogManager.getLogger(TestListners.class);
+
 	static {
 		BasicConfigurator.configure();
 	}
-
 
 	@Override public void onTestStart(ITestResult iTestResult) {
 		log.info("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is start. " );

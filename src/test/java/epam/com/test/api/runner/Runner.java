@@ -1,6 +1,5 @@
 package epam.com.test.api.runner;
 
-
 import org.testng.TestNG;
 import org.testng.collections.Lists;
 

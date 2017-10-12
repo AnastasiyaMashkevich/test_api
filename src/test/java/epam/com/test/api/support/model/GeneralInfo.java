@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GeneralInfo {
+
 	@JsonProperty("code")
 	private Integer code;
 	@JsonProperty("status")
@@ -22,6 +22,10 @@ public class GeneralInfo {
 	private String etag;
 	@JsonProperty("data")
 	private Data data;
+
+	public GeneralInfo() {
+
+	}
 
 	@JsonProperty("code")
 	public Integer getCode() {
@@ -91,5 +95,39 @@ public class GeneralInfo {
 	@JsonProperty("data")
 	public void setData(Data data) {
 		this.data = data;
+	}
+
+	@Override public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+
+		GeneralInfo that = (GeneralInfo) o;
+
+		if (code != null ? !code.equals(that.code) : that.code != null)
+			return false;
+		if (status != null ? !status.equals(that.status) : that.status != null)
+			return false;
+		if (copyright != null ? !copyright.equals(that.copyright) : that.copyright != null)
+			return false;
+		if (attributionText != null ? !attributionText.equals(that.attributionText) : that.attributionText != null)
+			return false;
+		if (attributionHTML != null ? !attributionHTML.equals(that.attributionHTML) : that.attributionHTML != null)
+			return false;
+		if (etag != null ? !etag.equals(that.etag) : that.etag != null)
+			return false;
+		return data != null ? data.equals(that.data) : that.data == null;
+	}
+
+	@Override public int hashCode() {
+		int result = code != null ? code.hashCode() : 0;
+		result = 31 * result + (status != null ? status.hashCode() : 0);
+		result = 31 * result + (copyright != null ? copyright.hashCode() : 0);
+		result = 31 * result + (attributionText != null ? attributionText.hashCode() : 0);
+		result = 31 * result + (attributionHTML != null ? attributionHTML.hashCode() : 0);
+		result = 31 * result + (etag != null ? etag.hashCode() : 0);
+		result = 31 * result + (data != null ? data.hashCode() : 0);
+		return result;
 	}
 }

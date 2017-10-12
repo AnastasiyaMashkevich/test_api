@@ -5,15 +5,9 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-    <test name="github API" >
-        <classes>
-            <class name="epam.com.test.api.tests.GeneralApiTest" >
-                <methods>
-                    <include name="responseBodyTest"/>
-                    <include name="generalRequestTest"/>
-                    <include name="generalResponceTest"/>
-                </methods>
-            </class>
-        </classes>
+    <test name="test api" >
+        <packages>
+            <package name="epam.com.test.api.tests.*" />
+        </packages>
     </test>
 </suite>

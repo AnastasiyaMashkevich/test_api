@@ -23,6 +23,10 @@ public class Data {
 	@JsonProperty("results")
 	private List<Result> results = null;
 
+	public Data() {
+
+	}
+
 	@JsonProperty("offset")
 	public Integer getOffset() {
 		return offset;
@@ -71,5 +75,33 @@ public class Data {
 	@JsonProperty("results")
 	public void setResults(List<Result> results) {
 		this.results = results;
+	}
+
+	@Override public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+
+		Data data = (Data) o;
+
+		if (!offset.equals(data.offset))
+			return false;
+		if (!limit.equals(data.limit))
+			return false;
+		if (!total.equals(data.total))
+			return false;
+		if (!count.equals(data.count))
+			return false;
+		return results.equals(data.results);
+	}
+
+	@Override public int hashCode() {
+		int result = offset.hashCode();
+		result = 31 * result + limit.hashCode();
+		result = 31 * result + total.hashCode();
+		result = 31 * result + count.hashCode();
+		result = 31 * result + results.hashCode();
+		return result;
 	}
 }
