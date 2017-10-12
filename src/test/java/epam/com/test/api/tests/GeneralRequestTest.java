@@ -31,8 +31,7 @@ public class GeneralRequestTest extends BaseTest {
 				String.format("Request is not correct. Host should be as %s", ProjectConstants.MAIN_HOST));
 
 		serviceHelper.executeGetCharacterRequest(idList, list);
-		softAssert.assertTrue(list.size() == idList.size(),
-				"All Id should be related to certain characters.");
+		softAssert.assertTrue(list.size() == idList.size(), "All Id should be related to certain characters.");
 
 		softAssert.assertAll();
 	}

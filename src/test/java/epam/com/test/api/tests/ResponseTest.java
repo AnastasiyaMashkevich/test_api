@@ -13,10 +13,9 @@ public class ResponseTest extends BaseTest {
 		Response response = serviceHelper.getComicsListResponse();
 
 		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertEquals(response.code(), ProjectConstants.SUCCESS_STATUS_CODE,
-				"Status code is not correct. ");
+		softAssert.assertEquals(response.code(), ProjectConstants.SUCCESS_STATUS_CODE, "Status code is not correct. ");
 		softAssert.assertTrue(response.isSuccessful(), "Response error.");
-		softAssert.assertEquals(response.raw().message(),ProjectConstants.SUCCESS_STATUS_MESSAGE,
+		softAssert.assertEquals(response.raw().message(), ProjectConstants.SUCCESS_STATUS_MESSAGE,
 				"Status message is not correct. ");
 
 		softAssert.assertTrue(response.raw().protocol().toString().contains(ProjectConstants.PROTOCOL),

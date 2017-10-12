@@ -16,15 +16,15 @@ public class TestListners implements ITestListener {
 	}
 
 	@Override public void onTestStart(ITestResult iTestResult) {
-		log.info("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is start. " );
+		log.info("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is start. ");
 	}
 
 	@Override public void onTestSuccess(ITestResult iTestResult) {
-		log.info(("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is success. " ));
+		log.info(("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is success. "));
 	}
 
 	@Override public void onTestFailure(ITestResult iTestResult) {
-		log.info(("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is fail. " ));
+		log.info(("Test  /"+ iTestResult.getMethod().getMethodName()+"/ is fail. "));
 	}
 
 	@Override public void onTestSkipped(ITestResult iTestResult) {

@@ -10,9 +10,7 @@ public class ResponseBodyTest extends BaseTest {
 	public void responseBodyTest() {
 		GeneralInfo generalInfo = serviceHelper.getCharactersListObject();
 
-		Assert.assertNotNull(generalInfo,
-				"Object was not received from request. ");
-		Assert.assertTrue(generalInfo.getData().getResults().size() != 0,
-				"Results list should be more then zero.");
+		Assert.assertNotNull(generalInfo, "Object was not received from request. ");
+		Assert.assertTrue(generalInfo.getData().getResults().size() != 0, "Results list should be more then zero.");
 	}
 }

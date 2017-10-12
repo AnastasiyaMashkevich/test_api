@@ -41,7 +41,7 @@ public class ServiceHelper {
 		}
 	}
 
-	public Call<ResponseBody> getComicsListCall(){
+	public Call<ResponseBody> getComicsListCall() {
 		return service.getComicsList(ts, publicKey, hash);
 	}
 
@@ -64,7 +64,8 @@ public class ServiceHelper {
 	}
 
 	public List<Integer> idList() {
-		return getCharactersListObject().getData().getResults().stream().map(Result :: getId).collect(Collectors.toList());
+		return getCharactersListObject().getData().getResults().stream().map(Result::getId)
+				.collect(Collectors.toList());
 	}
 
 	public void executeGetCharacterRequest(List<Integer> IdList, List<GeneralInfo> actual) {
@@ -77,8 +78,8 @@ public class ServiceHelper {
 					GeneralInfo generalInfo = null;
 					Service service = ServiceWrapper.getInstance();
 					try {
-						String responseString = new String(service.getCharacter(id, ProjectConstants.TS, ProjectConstants.PUBLIC_KEY, ProjectConstants.HASH)
-								.execute().body().bytes());
+						String responseString = new String(service.getCharacter(id, ProjectConstants.TS, ProjectConstants.PUBLIC_KEY,
+										ProjectConstants.HASH).execute().body().bytes());
 						generalInfo = JsonHelper.fromJson(responseString, GeneralInfo.class);
 					} catch (Exception e) {
 						throw new RuntimeException(e.getMessage(), e);
