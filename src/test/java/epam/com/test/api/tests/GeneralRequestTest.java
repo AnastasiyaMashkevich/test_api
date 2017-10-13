@@ -18,7 +18,7 @@ public class GeneralRequestTest extends BaseTest {
 	public void generalRequestTest() {
 
 		List<GeneralInfo> list = Collections.synchronizedList(new ArrayList<GeneralInfo>());
-		List<Integer> idList = serviceHelper.idList();
+		List<Integer> idList = serviceHelper.getCharactersIdsList();
 
 		int characterId = serviceHelper.getCharacterId(FIRST_ITEM);
 		Request request = serviceHelper.getCharacterRequest(characterId);

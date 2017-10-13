@@ -33,16 +33,16 @@ public class ServiceHelper {
 		return service.getCharactersList(ts, publicKey, hash);
 	}
 
+	private Call<ResponseBody> getComicsListCall() {
+		return service.getComicsList(ts, publicKey, hash);
+	}
+
 	public Response getComicsListResponse() {
 		try {
 			return getComicsListCall().execute();
 		} catch (IOException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
-	}
-
-	public Call<ResponseBody> getComicsListCall() {
-		return service.getComicsList(ts, publicKey, hash);
 	}
 
 	public Request getCharacterRequest(int characterId) {
@@ -63,7 +63,7 @@ public class ServiceHelper {
 		return getCharactersListObject().getData().getResults().get(index).getId();
 	}
 
-	public List<Integer> idList() {
+	public List<Integer> getCharactersIdsList() {
 		return getCharactersListObject().getData().getResults().stream().map(Result::getId)
 				.collect(Collectors.toList());
 	}
