@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class ResponseBodyTest extends BaseTest {
 
-	@Test
+	@Test(groups = "Debug")
 	public void responseBodyTest() {
 		GeneralInfo generalInfo = serviceHelper.getCharactersListObject();
 

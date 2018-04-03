@@ -14,7 +14,7 @@ public class GeneralRequestTest extends BaseTest {
 
 	private static final int FIRST_ITEM = 0;
 
-	@Test
+	@Test(groups = "Smoke")
 	public void generalRequestTest() {
 
 		List<GeneralInfo> list = Collections.synchronizedList(new ArrayList<GeneralInfo>());

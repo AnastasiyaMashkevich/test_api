@@ -1,11 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="testing API" thread-count="2" parallel="tests" preserve-order="true">
+<suite name="testing API" thread-count="2" parallel="methods" preserve-order="true">
     <listeners>
         <listener class-name="epam.com.test.api.runner.TestListners" />
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-    <test name="test api">
+
+    <!-- TEST EXECUTION QUEUE -->
+    <test name="test api" verbose="1">
+    <groups>
+
+        <run>
+            <include name="Debug" /> <!-- Debug, Login, Smoke -->
+            <exclude name="Broken" /> <!-- Broken, Unstable -->
+        </run>
+    </groups>
+
         <packages>
             <package name="epam.com.test.api.tests.*" />
         </packages>

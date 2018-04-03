@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
 	protected ServiceHelper serviceHelper;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void setup() {
 		serviceHelper = new ServiceHelper();
 	}
