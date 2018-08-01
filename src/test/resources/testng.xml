@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="testing API" thread-count="2" parallel="methods" preserve-order="true">
+<suite name="testing API" thread-count="5" parallel="methods" preserve-order="true">
     <listeners>
         <listener class-name="epam.com.test.api.runner.TestListners" />
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
